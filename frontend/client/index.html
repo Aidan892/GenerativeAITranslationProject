@@ -5,9 +5,27 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="stylesheet" href="/src/style.css"> <!-- Ensure your CSS is linked -->
   </head>
   <body>
+    <!-- Navbar goes here -->
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <a href="#">TranslAItor</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#" id="translatorLink">Translator</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      </div>
+    </nav>
+
+    <!-- Main App content goes here -->
     <div id="app"></div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
