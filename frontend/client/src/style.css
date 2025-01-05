@@ -1,18 +1,18 @@
-/* Reset styles and base font */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(254, 233, 233, 0.87);
-  background-color: #ffffff;
+  background-color: #554444;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Link styles */
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,7 +22,6 @@ a:hover {
   color: #535bf2;
 }
 
-/* Body setup */
 body {
   margin: 0;
   display: flex;
@@ -32,9 +31,9 @@ body {
   flex-direction: column;
 }
 
-/* Navbar styles */
+
 nav {
-  background-color: #333;
+  background-color: #3f2b2b;
   padding: 5px 0;
   width: 100%;
   position: fixed;
@@ -51,10 +50,13 @@ nav {
 }
 
 .navbar .logo a {
-  color: white;
-  font-size: 2rem;
+  color: rgb(183, 180, 180);
+  font-size: 2.8rem;
   text-decoration: none;
   top:100px;
+}
+.navbar .logo a .ai {
+  color: #b91c01; 
 }
 
 .nav-links {
@@ -67,6 +69,7 @@ nav {
   color: white;
   text-decoration: none;
   font-size: 1.3rem;
+  color:#f44b2e;
   transition: background-color 0.3s;
 }
 
@@ -82,7 +85,6 @@ nav {
   cursor: pointer;
 }
 
-/* Mobile menu (hamburger) styling */
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
@@ -125,13 +127,14 @@ h1 {
   font-size: 1rem;
   line-height: 1.5;
   resize: none;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #343030;
+  color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   position: absolute;
   top: 90px;
   left: 0;
+  bottom: 100px;
 }
 
 .chat-box2 {
@@ -144,13 +147,14 @@ h1 {
   font-size: 1rem;
   line-height: 1.5;
   resize: none;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #343030;
+  color: #ebe8e8;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   position: absolute;
   top: 90px;
   right: 0;
+  bottom: 100px;
 }
 
 .chat-box1, .chat-box2, .response-box1 {
@@ -160,7 +164,7 @@ h1 {
 .chat-box1:hover, .chat-box2:hover, .response-box1:hover {
   border-color: #646cff;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  background-color: #eef2ff;
+  background-color: #000000;
   cursor: pointer;
 }
 
