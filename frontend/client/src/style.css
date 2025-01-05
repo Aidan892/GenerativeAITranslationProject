@@ -157,6 +157,12 @@ h1 {
   bottom: 100px;
 }
 
+.translate-button{
+  width: 100px;
+  height: 50px;
+  top:calc(90px + calc(100vh - 250px));
+}
+
 .chat-box1, .chat-box2, .response-box1 {
   transition: all 0.3s ease;
 }
