@@ -29,17 +29,24 @@ export function loadTranslator() {
         }
         return response.json();
       })
-      .then((data) => {
+      .then(async (data) => {
         console.log("Response from backend:", data);
 
-        
-        document.querySelector("#chatBox2").value = data.response;
+        for(let i = 0; i< data.response.length ; i++){
+          let responseString = data.response.substring(i, i+1);
+          await delay(50);
+          document.querySelector("#chatBox2").value += responseString;
+        }
       })
       .catch((error) => {
         console.error("Error:", error);
         document.querySelector("#chatBox2").value = "An error occurred while translating.";
       });
     });
+
+    async function delay(milliseconds){
+      return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
 
 }
 

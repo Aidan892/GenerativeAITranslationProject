@@ -110,11 +110,55 @@ nav {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: #1a1a1a;
+  color: #211c1c;
   text-align: center;
   position: absolute;
   top: 80px; 
   width: 100%;
+}
+
+.welcome-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  text-align: center;
+}
+
+.welcome-header {
+  font-size: 5em;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin-top: 300px;
+  margin-bottom: 50px;
+  color:#271f1f;
+  transition: all 0.3s ease;
+}
+
+.welcome-header:hover {
+  color: #251e1c; 
+  text-shadow: 
+  0 0 3px #fd0404,  
+  0 0 6px #fd0404,  
+  0 0 8px #fd0404,  
+  0 0 10px #fd0404; 
+}
+
+.go-to-translator-btn {
+  padding: 20px 40px; 
+  font-size: 1.5rem; 
+  background-color: #f44b2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 200px;
+  transition: background-color 0.3s ease;
+}
+
+.go-to-translator-btn:hover {
+  background-color: #fa1f02; /* Darker neon orange */
+  transform: scale(1.1);
 }
 
 .chat-box1 {
