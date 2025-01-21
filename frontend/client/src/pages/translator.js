@@ -4,6 +4,26 @@ import './main.js';
 export function loadTranslator() {
   document.querySelector('#app').innerHTML = `
     <div>
+      <div class="dropdown-container">
+        <select class="dropdown-menu" id="dropdown1">
+          <option value="" disabled selected>Select a language...</option>
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="CSS">CSS</option>
+          <option value="Other">Other</option>
+        </select>
+        <select class="dropdown-menu" id="dropdown2">
+          <option value="" disabled selected>Translate to...</option>
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="C+=">C++</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="CSS">CSS</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
       <textarea class="chat-box1" id = "chatBox1" placeholder="Insert code here..." ></textarea>
       <textarea class="chat-box2" id = "chatBox2"></textarea>
       <button class = "translate-button" id = "translateButton">Translate</button>
@@ -34,7 +54,7 @@ export function loadTranslator() {
 
         for(let i = 0; i< data.response.length ; i++){
           let responseString = data.response.substring(i, i+1);
-          await delay(50);
+          await delay(20);
           document.querySelector("#chatBox2").value += responseString;
         }
       })

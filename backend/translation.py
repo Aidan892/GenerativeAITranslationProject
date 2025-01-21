@@ -23,7 +23,7 @@ def chat():
     requestBody = request.json
     message = requestBody["message"] 
     logging.info(message)
-    systemPrompt = "Job is to return translated code from one programming language to another based on user input, only return code output, nothing else"
+    systemPrompt = "Job is to return translated code from one programming language to another based on user input, only return code output, nothing else, not even the programming language specification"
     stream = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[{"role": "system", "content": systemPrompt},{"role": "user", "content": message}],
