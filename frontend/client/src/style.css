@@ -143,6 +143,17 @@ h1 {
   0 0 8px #fd0404,  
   0 0 10px #fd0404; 
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .go-to-translator-btn {
   padding: 20px 40px; 
@@ -153,6 +164,7 @@ h1 {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 200px;
+  animation: pulse 1.5s infinite ease-in-out;
   transition: background-color 0.3s ease;
 }
 
