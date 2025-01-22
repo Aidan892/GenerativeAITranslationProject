@@ -25,7 +25,7 @@ export function loadTranslator() {
         </select>
       </div>
       <textarea class="chat-box1" id = "chatBox1" placeholder="Insert code here..." ></textarea>
-      <textarea class="chat-box2" id = "chatBox2"></textarea>
+      <textarea class="chat-box2" id = "chatBox2" placeholder = "Click the Translate Button Below..."></textarea>
       <button class = "translate-button" id = "translateButton">Translate</button>
     </div>
   `;
