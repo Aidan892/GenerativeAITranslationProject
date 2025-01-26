@@ -1,6 +1,9 @@
 import '../style.css';
 import './main.js';
 
+let chatHistory = [];
+let latestQuestion = "";
+
 export function loadTranslator() {
   document.querySelector('#app').innerHTML = `
     <div>
@@ -33,14 +36,15 @@ export function loadTranslator() {
 
   translateButton.addEventListener("click", async function() {
     const chatBox1Text = document.querySelector("#chatBox1").value;
-    console.log("ChatBox! message: ", chatBox1Text)
+    latestQuestion = chatBox1Text;
+    // console.log("ChatBox! message: ", chatBox1Text)
     const chatBox2 = document.querySelector("#chatBox2");
     chatBox2.value = '';
     const initialLanguage = document.querySelector("#dropdown1").value;
     const translateLanguage = document.querySelector("#dropdown2").value;
 
-    console.log("Dropdown 1 Value:", initialLanguage);
-    console.log("Dropdown 2 Value:", translateLanguage);
+    // console.log("Dropdown 1 Value:", initialLanguage);
+    // console.log("Dropdown 2 Value:", translateLanguage);
 
     //fetching from backend
     //asyncronous method
@@ -49,7 +53,7 @@ export function loadTranslator() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({message: chatBox1Text, initialLanguage: initialLanguage, translateLanguage: translateLanguage}),
+      body: JSON.stringify({message: latestQuestion, initialLanguage: initialLanguage, translateLanguage: translateLanguage, chatHistory: chatHistory}),
     })
       .then((response) => {
         if (!response.ok) {
@@ -66,6 +70,8 @@ export function loadTranslator() {
           await delay(20);
           document.querySelector("#chatBox2").value += responseString;
         }
+        chatHistory.push({message:latestQuestion, answer:data.response});
+        console.log("chatHistory:", chatHistory);
       })
       .catch((error) => {
         console.error("Error:", error);
