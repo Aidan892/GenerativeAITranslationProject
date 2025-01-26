@@ -29,10 +29,18 @@ export function loadTranslator() {
       <button class = "translate-button" id = "translateButton">Translate</button>
     </div>
   `;
+  
 
   translateButton.addEventListener("click", async function() {
     const chatBox1Text = document.querySelector("#chatBox1").value;
     console.log("ChatBox! message: ", chatBox1Text)
+    const chatBox2 = document.querySelector("#chatBox2");
+    chatBox2.value = '';
+    const dropdown1Value = document.querySelector("#dropdown1").value;
+    const dropdown2Value = document.querySelector("#dropdown2").value;
+
+    console.log("Dropdown 1 Value:", dropdown1Value);
+    console.log("Dropdown 2 Value:", dropdown2Value);
 
     //fetching from backend
     //asyncronous method
@@ -54,7 +62,7 @@ export function loadTranslator() {
         // document.querySelector("#chatBox2").value = data.response;
 
         for(let i = 0; i< data.response.length ; i++){
-          let responseString = data.response.charAt(i);;
+          let responseString = data.response.charAt(i);
           await delay(20);
           document.querySelector("#chatBox2").value += responseString;
         }
@@ -68,6 +76,6 @@ export function loadTranslator() {
     async function delay(milliseconds){
       return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
-
+    
 }
 

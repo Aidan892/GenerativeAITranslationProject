@@ -14,7 +14,6 @@ CORS(app,resources = {r'/*':{'origins': '*'}})
 @app.route('/',methods = ['GET'])
 def index():
     return {"success": True}
-
 #decorator - creates endpoint
 #1/5/24
 #Use endpoint to send frontend text over to backend

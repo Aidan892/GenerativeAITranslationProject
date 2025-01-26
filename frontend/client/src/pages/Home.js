@@ -14,4 +14,5 @@ export function loadHomePage() {
   button.addEventListener('click', () => {
       loadTranslator();   
   });
+  
 }

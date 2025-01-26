@@ -128,21 +128,37 @@ h1 {
 .welcome-header {
   font-size: 5em;
   line-height: 1.1;
-  color: #1a1a1a;
+  color: #d7c7c7; 
   margin-top: 300px;
   margin-bottom: 50px;
-  color:#271f1f;
   transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(108, 90, 90, 0.8), 0 0 20px rgba(215, 203, 203, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+  animation: headerAnimation 2s ease-in-out;
 }
 
 .welcome-header:hover {
-  color: #251e1c; 
+  color: #d7c7c7; 
   text-shadow: 
   0 0 3px #fd0404,  
   0 0 6px #fd0404,  
   0 0 8px #fd0404,  
   0 0 10px #fd0404; 
 }
+
+@keyframes headerAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
