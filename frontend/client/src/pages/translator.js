@@ -36,11 +36,11 @@ export function loadTranslator() {
     console.log("ChatBox! message: ", chatBox1Text)
     const chatBox2 = document.querySelector("#chatBox2");
     chatBox2.value = '';
-    const dropdown1Value = document.querySelector("#dropdown1").value;
-    const dropdown2Value = document.querySelector("#dropdown2").value;
+    const initialLanguage = document.querySelector("#dropdown1").value;
+    const translateLanguage = document.querySelector("#dropdown2").value;
 
-    console.log("Dropdown 1 Value:", dropdown1Value);
-    console.log("Dropdown 2 Value:", dropdown2Value);
+    console.log("Dropdown 1 Value:", initialLanguage);
+    console.log("Dropdown 2 Value:", translateLanguage);
 
     //fetching from backend
     //asyncronous method
@@ -49,7 +49,7 @@ export function loadTranslator() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({message: chatBox1Text}),
+      body: JSON.stringify({message: chatBox1Text, initialLanguage: initialLanguage, translateLanguage: translateLanguage}),
     })
       .then((response) => {
         if (!response.ok) {
