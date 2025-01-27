@@ -43,6 +43,8 @@ export function loadTranslator() {
     const initialLanguage = document.querySelector("#dropdown1").value;
     const translateLanguage = document.querySelector("#dropdown2").value;
 
+    chatBox2.value = "Translating...";
+
     // console.log("Dropdown 1 Value:", initialLanguage);
     // console.log("Dropdown 2 Value:", translateLanguage);
 
@@ -64,7 +66,7 @@ export function loadTranslator() {
       .then(async (data) => {
         console.log("Response from backend:", data);
         // document.querySelector("#chatBox2").value = data.response;
-
+        chatBox2.value = "";
         for(let i = 0; i< data.response.length ; i++){
           let responseString = data.response.charAt(i);
           await delay(20);

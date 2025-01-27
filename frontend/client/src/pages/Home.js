@@ -5,7 +5,7 @@ import { loadTranslator } from './translator.js';
 export function loadHomePage() {
   document.querySelector('#app').innerHTML = `
     <div class="welcome-header-container">
-      <h1 class="welcome-header">Welcome to TranslAItor!</h1>
+      <h1 class="welcome-header">Welcome to Transl<span class="ai">AI</span>tor!</h1>
       <button class="go-to-translator-btn" id="goToTranslatorBtn">Start Translating</button>
     </div>
   `;
