@@ -69,7 +69,7 @@ export function loadTranslator() {
         chatBox2.value = "";
         for(let i = 0; i< data.response.length ; i++){
           let responseString = data.response.charAt(i);
-          await delay(20);
+          await delay(10);
           document.querySelector("#chatBox2").value += responseString;
         }
         chatHistory.push({message:latestQuestion, answer:data.response});
