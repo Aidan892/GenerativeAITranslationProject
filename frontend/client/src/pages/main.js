@@ -36,4 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  let lastScrollTop = 0;
+  const navbar = document.querySelector("nav");
+
+  window.addEventListener("scroll", function () {
+      let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop && scrollTop > 50) {
+          // Scrolling down - Hide navbar
+          navbar.style.top = "-120px"; 
+      } else {
+          // Scrolling up - Show navbar
+          navbar.style.top = "0";
+      }
+
+      lastScrollTop = scrollTop;
+  });
+});
+
+
 

@@ -20,16 +20,21 @@ def index():
 @app.route('/chat', methods = ['POST'])
 def chat():
     requestBody = request.json
+    #dynamically append to the message field the chat history. - 2/2/25
     message = requestBody["message"] 
     initialLanguage = requestBody["initialLanguage"]
     translateLanguage = requestBody["translateLanguage"]
+    chatHistory = requestBody["chatHistory"]
     logging.info(message)
     systemPrompt = f"Job is to return translated code from {initialLanguage} to {translateLanguage}, only return code output, nothing else, not even the programming language specification"
     stream = client.chat.completions.create(
         model="gpt-4o-mini",
-        messages=[{"role": "system", "content": systemPrompt},{"role": "user", "content": message}],
+        messages=[
+        {"role": "system", "content": systemPrompt},
+        {"role": "user", "content": message}],
         stream=True,
-    )
+    )  
+    logging.info(chatHistory)
     response = ""
     for chunk in stream:
         if chunk.choices[0].delta.content is not None:

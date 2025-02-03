@@ -5,7 +5,7 @@
     font-weight: 400;
     color-scheme: light dark;
     color: rgba(254, 233, 233, 0.87);
-    background:linear-gradient(90deg, #3d2f2f, #de2d27);
+    background:linear-gradient(90deg, #564242, #fc443e);
     font-synthesis: none;
     text-rendering: optimizeLegibility;;
     font-synthesis: none;
@@ -36,14 +36,15 @@
 
   nav {
     background-color: #5d2424;
-    height: 120px;  /* Set a specific height */
-    line-height: 40px; /* Align text vertically */
+    height: 120px;
+    line-height: 40px;
     padding: 5px 0;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: top 0.3s ease-in-out;
   }
 
   .navbar {
