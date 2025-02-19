@@ -156,7 +156,93 @@
     0 0 10px #fd0404; 
   }
 
+
+.button-container button {
+  transition: all 0.3s ease-in-out;
+}
+
+.go-to-translator-btn {
+  padding: 20px 40px; 
+  font-size: 1.5rem; 
+  background-color: #f44b2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 200px;
+  animation: pulse 1.5s infinite ease-in-out;
+  transition: background-color 0.3s ease;
+}
+
+.go-to-translator-btn:hover {
+  background-color: #fa1f02; /* Darker neon orange */
+  transform: scale(1.1);
+}
+
+.go-to-translator-btn:hover {
+  background-color: #fa1f02;
+  transform: scale(1.1);
+}
+  .about-container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.6s ease-out forwards;
+    text-align: center;
+  }
   
+  .about-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .about-container h2 {
+    font-size: 2rem;
+    color: #34495e;
+    margin-top: 25px;
+  }
+  
+  .about-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+  
+  .about-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .about-list li {
+    font-size: 1.2rem;
+    margin: 12px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about-list li::before {
+    content: '✅';
+    margin-right: 10px;
+    font-size: 1.4rem;
+    color: #27ae60;
+  }
+ 
 
   @keyframes fadeIn {
     0% {
@@ -194,24 +280,6 @@
     100% {
       transform: scale(1);
     }
-  }
-
-  .go-to-translator-btn {
-    padding: 20px 40px; 
-    font-size: 1.5rem; 
-    background-color: #f44b2e;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 200px;
-    animation: pulse 1.5s infinite ease-in-out;
-    transition: background-color 0.3s ease;
-  }
-
-  .go-to-translator-btn:hover {
-    background-color: #fa1f02; /* Darker neon orange */
-    transform: scale(1.1);
   }
 
   .dropdown-container {

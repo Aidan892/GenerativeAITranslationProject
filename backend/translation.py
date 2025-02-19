@@ -3,11 +3,31 @@ import sys
 import json
 import flask
 import logging
+import tiktoken
+logging.getLogger().setLevel(logging.INFO)
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 #Notes:
 # Internal server error 500 = backend error
+MAX_RESPONSE_TOKEN_LIMIT = 3000
+MAX_TOTAL_TOKEN_LIMIT = 9000
 
+#calculates num of tokens in messages array
+def numTokens(messages, model = 'gpt-4o-mini'):
+    encoding = tiktoken.encoding_for_model(model)
+    numTokens = 0
+    for item in messages:
+        #role fields & content key adds 4 tokens
+        numTokens += 4
+        for key, value in item.items():
+            numTokens += len(encoding.encode(value))
+            #example
+            #[a,b,c,d,ef]
+            #[1,3,2,4,16] -> len = 5
+            if key == 'name':
+                numTokens -= 1
+    numTokens += 2
+    return numTokens
 app = Flask(__name__)
 app.config.from_object(__name__)
 CORS(app,resources = {r'/*':{'origins': '*'}})
@@ -25,7 +45,7 @@ def chat():
     translateLanguage = requestBody["translateLanguage"]
     chatHistory = requestBody["chatHistory"]
     
-    logging.info(message)
+    
     systemPrompt = f"Job is to return translated code from {initialLanguage} to {translateLanguage}, only return code output, nothing else, not even the programming language specification"
     messages = [{"role": "system", "content": systemPrompt}]
     
@@ -34,11 +54,17 @@ def chat():
         messages.append({"role": "assistant", "content": item["answer"]})
 
     messages.append({"role": "user", "content": message})
-
+    tokenCount = numTokens(messages) 
+    while (tokenCount + MAX_RESPONSE_TOKEN_LIMIT >= MAX_TOTAL_TOKEN_LIMIT):
+        del messages[1]
+        del messages[1]
+        tokenCount = numTokens(messages)
+    logging.info(messages)
     stream = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=messages,
         stream=True,
+        max_tokens = MAX_RESPONSE_TOKEN_LIMIT
     ) 
     response = ""
     for chunk in stream:
