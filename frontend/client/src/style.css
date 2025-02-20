@@ -5,7 +5,7 @@
     font-weight: 400;
     color-scheme: light dark;
     color: rgba(254, 233, 233, 0.87);
-    background:linear-gradient(90deg, #564242, #fc443e);
+    background: linear-gradient(90deg, #564242, #ba3531);
     font-synthesis: none;
     text-rendering: optimizeLegibility;;
     font-synthesis: none;
@@ -13,7 +13,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
 
   a {
     font-weight: 500;
@@ -155,34 +154,35 @@
     0 0 8px #fd0404,  
     0 0 10px #fd0404; 
   }
+  
 
 
-.button-container button {
-  transition: all 0.3s ease-in-out;
-}
+  .button-container button {
+    transition: all 0.3s ease-in-out;
+  }
 
-.go-to-translator-btn {
-  padding: 20px 40px; 
-  font-size: 1.5rem; 
-  background-color: #f44b2e;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 200px;
-  animation: pulse 1.5s infinite ease-in-out;
-  transition: background-color 0.3s ease;
-}
+  .go-to-translator-btn {
+    padding: 20px 40px; 
+    font-size: 1.5rem; 
+    background-color: #f44b2e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 200px;
+    animation: pulse 1.5s infinite ease-in-out;
+    transition: background-color 0.3s ease;
+  }
 
-.go-to-translator-btn:hover {
-  background-color: #fa1f02; /* Darker neon orange */
-  transform: scale(1.1);
-}
+  .go-to-translator-btn:hover {
+    background-color: #fa1f02; /* Darker neon orange */
+    transform: scale(1.1);
+  }
 
-.go-to-translator-btn:hover {
-  background-color: #fa1f02;
-  transform: scale(1.1);
-}
+  .go-to-translator-btn:hover {
+    background-color: #fa1f02;
+    transform: scale(1.1);
+  }
   .about-container {
     max-width: 900px;
     margin: 80px auto;
