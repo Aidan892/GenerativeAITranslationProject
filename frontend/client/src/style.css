@@ -169,7 +169,7 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 200px;
+    margin-top: 300px;
     animation: pulse 1.5s infinite ease-in-out;
     transition: background-color 0.3s ease;
   }
@@ -180,12 +180,12 @@
   }
   
   .learn-more-container {
-    margin-top: 30px; /* Reduced margin to move it closer to the button */
+    padding-top: 70px; 
     text-align: center;
   }
   
   .learn-more-link {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #211c1c;
     text-decoration: none;
     display: inline-flex;
@@ -198,7 +198,7 @@
   }
   
   .caret {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-left: 8px;
     animation: bounce 1.5s infinite;
   }
@@ -237,40 +237,53 @@
   background: rgba(0, 0, 0, 0.85);
   padding: 25px;
   border-radius: 10px;
-  display: block; 
-  text-align: left; 
+  display: block;
+  text-align: left;
   max-width: 85%;
-  margin: 0 auto; 
+  margin: 0 auto;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
 }
 
 .code-example pre {
   margin: 0;
   overflow: hidden;
-  /* Remove the border-right here from pre */
 }
 
+/* Each line is hidden initially with width: 0 */
 .code-example .line {
   display: block;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #f8f8f2; /* caret effect per line */
+  border-right: 2px solid #f8f8f2;
   width: 0;
-  animation: typing 2s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+  /* Use two animations: one for typing and one for the blinking caret.
+     We set separate delays for each animation using the comma-separated syntax. */
+  animation: 
+    typing 2s steps(30, end) forwards, 
+    blink-caret 0.75s step-end infinite;
 }
 
-/* Delay each line's animation slightly */
+/* Stagger animation delays so lines type sequentially */
 .code-example .line:nth-child(1) {
-  animation-delay: 0s;
+  animation-delay: 0s, 0s;
 }
 .code-example .line:nth-child(2) {
-  animation-delay: 2.2s;
+  animation-delay: 2.2s, 2.2s;
 }
 .code-example .line:nth-child(3) {
-  animation-delay: 4.4s;
+  animation-delay: 4.4s, 4.4s;
+}
+.code-example .line:nth-child(4) {
+  animation-delay: 6.6s, 6.6s;
+}
+.code-example .line:nth-child(5) {
+  animation-delay: 8.8s, 8.8s;
+}
+.code-example .line:nth-child(6) {
+  animation-delay: 11s, 11s;
 }
 
-/* Typing animation for each line */
+/* Typing animation from width 0 to full width */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -288,7 +301,6 @@
   color: #f8f8f2;
   display: inline;
 }
-
   
  /*About Page */ 
 
