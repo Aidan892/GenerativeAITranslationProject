@@ -6,8 +6,8 @@ export function loadAboutPage() {
     <div class="about-container">
       
       <p>
-        Welcome to our AI-powered programming language translator! Our platform helps developers seamlessly convert code 
-        between different programming languages while also providing AI-driven explanations for algorithms and other programming queries.
+        Welcome to our AI-powered programming language translator! Our platform helps developers convert code 
+        between different programming languages while also providing explanations for algorithms and other programming queries.
       </p>
 
       <h2>Features:</h2>
@@ -21,7 +21,7 @@ export function loadAboutPage() {
       <h2>Why Use Our Tool?</h2>
       <p>
         Whether you're learning a new language, debugging code, or simply exploring different ways to solve problems, 
-        our AI assistant provides reliable and efficient translations while also explaining complex concepts in an easy-to-understand way.
+        our AI assistant provides reliable and efficient translations while also explaining complex concepts in an easy-to-understand way, allocating more time to problem solving and logical thinking.
       </p>
     </div>
   `;
