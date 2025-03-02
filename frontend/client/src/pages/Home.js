@@ -1,3 +1,4 @@
+import { loadTranslator } from './translator.js'; 
 export function loadHomePage() {
   document.querySelector('#app').innerHTML = `
     <div class="welcome-header-container">
@@ -12,8 +13,8 @@ export function loadHomePage() {
       </div>
     </div>
     <div class="language-support-container" id="languageSupport">
-      <h2>Supported Programming Languages</h2>
-      <p>Translate code between multiple languages seamlessly!</p>
+      <h2>AI powered code translator that translates code between programming languages!</h2>
+      <p>Supports ALL programming languages</p>
       <div class="code-example">
         <pre>
           <span class="line">// Print a message to the console - JavaScript</span>
@@ -28,7 +29,8 @@ export function loadHomePage() {
   `;
 
   const translateBtn = document.querySelector('#goToTranslatorBtn');
-  translateBtn.addEventListener('click', () => {
+  translateBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     loadTranslator();   
   });
 
