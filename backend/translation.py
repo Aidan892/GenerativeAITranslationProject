@@ -77,15 +77,18 @@ def chat():
 
 
 if __name__ == "__main__":
-    filePath = sys.argv[1]
+    filePath = "/etc/secrets/config.json"
 
     with open(filePath, 'r') as configFile:
         configData = json.load(configFile)
         OPEN_AI_KEY = configData["OPEN_AI_KEY"]
         configFile.close()
-        message = "Spell Hi"
 
     client = OpenAI(api_key = OPEN_AI_KEY)
-    app.run(host="0.0.0.0", port = 5000)
+    from waitress import serve
+    #development server
+    # app.run(host="0.0.0.0", port = 5000)
+    #production server
+    serve(app,host = "0.0.0.0",port = 5000)
 
     

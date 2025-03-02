@@ -13,7 +13,7 @@ export function loadHomePage() {
       </div>
     </div>
     <div class="language-support-container" id="languageSupport">
-      <h2>AI powered code translator that translates code between programming languages!</h2>
+      <h2>AI-powered code translator!</h2>
       <p>Supports ALL programming languages</p>
       <div class="code-example">
         <pre>

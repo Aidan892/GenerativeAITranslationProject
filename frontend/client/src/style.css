@@ -224,13 +224,13 @@
 }
 
 .language-support-container h2 {
-    font-size: 2.5rem; /* Increased font size */
+    font-size: 3rem; /* Increased font size */
     margin-bottom: 20px;
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
 }
 
 .language-support-container p {
-    font-size: 1.4rem; /* Increased font size */
+    font-size: 2rem; /* Increased font size */
     margin-bottom: 25px;
     opacity: 0.95;
 }
