@@ -50,6 +50,8 @@ export function loadTranslator() {
 
     //fetching from backend
     //asyncronous method
+    //https://generativeaitranslationproject.onrender.com/chat
+    // local: http://localhost:5000/chat
     const response = await fetch("https://generativeaitranslationproject.onrender.com/chat", {
       method: "POST",
       headers: {

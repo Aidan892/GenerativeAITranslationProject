@@ -1,4 +1,5 @@
-from openai import OpenAI
+import openai
+# from openai import OpenAI
 import sys
 import json
 import flask
@@ -60,17 +61,18 @@ def chat():
         del messages[1]
         tokenCount = numTokens(messages)
     logging.info(messages)
-    stream = client.chat.completions.create(
+    openai.api_key = OPEN_AI_KEY
+    response = openai.ChatCompletion.create(
         model="gpt-4o-mini",
         messages=messages,
-        stream=True,
+        # stream=True,
         max_tokens = MAX_RESPONSE_TOKEN_LIMIT
     ) 
-    response = ""
-    for chunk in stream:
-        if chunk.choices[0].delta.content is not None:
-            response += chunk.choices[0].delta.content
-    
+    # response = ""
+    # for chunk in stream:
+    #     if chunk.choices[0].delta.content is not None:
+    #         response += chunk.choices[0].delta.content
+    response = response["choices"][0]["message"]["content"]
     logging.info(response)
     return {"response": response, "chatHistory": chatHistory, "success": True}
 
@@ -78,13 +80,14 @@ def chat():
 
 if __name__ == "__main__":
     filePath = "/etc/secrets/config.json"
+    # filePath = "C:\\Users\\Aidan\\Documents\\GenerativeAITranslationProject\\backend\\config.json"
 
     with open(filePath, 'r') as configFile:
         configData = json.load(configFile)
         OPEN_AI_KEY = configData["OPEN_AI_KEY"]
         configFile.close()
 
-    client = OpenAI(api_key = OPEN_AI_KEY)
+    # client = OpenAI(api_key = OPEN_AI_KEY)
     from waitress import serve
     #development server
     # app.run(host="0.0.0.0", port = 5000)
