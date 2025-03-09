@@ -50,7 +50,7 @@ export function loadTranslator() {
 
     //fetching from backend
     //asyncronous method
-    const response = await fetch("http://localhost:5000/chat", {
+    const response = await fetch("https://generativeaitranslationproject.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
