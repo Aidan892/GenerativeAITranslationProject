@@ -21,7 +21,7 @@ export function loadAboutPage() {
       <h2>Why Use This Tool?</h2>
       <p>
         Whether you're learning a new language, debugging code, or simply exploring different ways to solve problems, 
-        this AI assistant provides reliable and efficient translations while also explaining complex concepts in an easy-to-understand way, allocating more time to problem solving and logical thinking.
+        this AI assistant provides reliable and efficient translations while also explaining complex concepts in an easy-to-understand way, allocating more time to problem solving and logical thinking!
       </p>
     </div>
   `;

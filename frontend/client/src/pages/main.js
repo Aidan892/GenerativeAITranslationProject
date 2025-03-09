@@ -1,8 +1,8 @@
 import '../style.css';  
 import './translator.js';
 import { loadTranslator } from './translator.js'; 
-import { loadHomePage } from './home.js';
-import { loadAboutPage } from './about.js';
+import { loadHomePage } from './Home.js';
+import { loadAboutPage } from './About.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
