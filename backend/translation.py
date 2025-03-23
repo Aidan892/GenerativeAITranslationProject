@@ -61,7 +61,7 @@ def chat():
         del messages[1]
         tokenCount = numTokens(messages)
     logging.info(messages)
-    print("Open AI Key: " + OPEN_AI_KEY)
+    logging.info("Open AI Key: " + OPEN_AI_KEY)
     openai.api_key = OPEN_AI_KEY
     response = openai.ChatCompletion.create(
         model="gpt-4o-mini",
@@ -88,7 +88,7 @@ if __name__ == "__main__":
         OPEN_AI_KEY = configData["OPEN_AI_KEY"]
         configFile.close()
 
-    print("Open AI Key: " + OPEN_AI_KEY)
+    logging.info("Open AI Key: " + OPEN_AI_KEY)
     # client = OpenAI(api_key = OPEN_AI_KEY)
     from waitress import serve
     #development server
