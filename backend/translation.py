@@ -8,6 +8,10 @@ import tiktoken
 logging.getLogger().setLevel(logging.INFO)
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os
+load_dotenv()
+OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
 #Notes:
 # Internal server error 500 = backend error
 MAX_RESPONSE_TOKEN_LIMIT = 3000
@@ -83,10 +87,14 @@ if __name__ == "__main__":
     filePath = "/etc/secrets/config.json"
     # filePath = "C:\\Users\\Aidan\\Documents\\GenerativeAITranslationProject\\backend\\config.json"
 
-    with open(filePath, 'r') as configFile:
-        configData = json.load(configFile)
-        OPEN_AI_KEY = configData["OPEN_AI_KEY"]
-        configFile.close()
+    # with open(filePath, 'r') as configFile:
+    #     configData = json.load(configFile)
+    #     OPEN_AI_KEY = configData["OPEN_AI_KEY"]
+    #     configFile.close()
+    from dotenv import load_dotenv
+    import os
+    load_dotenv()  
+    OPEN_AI_KEY = os.getenv("OPEN_AI_KEY")
 
     logging.info("Open AI Key: " + OPEN_AI_KEY)
     # client = OpenAI(api_key = OPEN_AI_KEY)
